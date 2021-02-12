@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIFA 14 UWP Unlocker", "FIFA 14 UWP Unlocker\FIFA 14 UWP Unlocker.csproj", "{F673048D-F3FB-45CB-AC6C-390A943DB46C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F673048D-F3FB-45CB-AC6C-390A943DB46C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F673048D-F3FB-45CB-AC6C-390A943DB46C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F673048D-F3FB-45CB-AC6C-390A943DB46C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F673048D-F3FB-45CB-AC6C-390A943DB46C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6C0C844-1F7E-4B10-B623-AC0BA646D60E}
+	EndGlobalSection
+EndGlobal
