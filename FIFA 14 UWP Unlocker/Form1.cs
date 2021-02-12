@@ -69,21 +69,6 @@ namespace FIFA_14_UWP_Unlocker
             string title = ":)";
             MessageBox.Show(message, title);
         }
-        private void CopyResource(string resourceName, string file)
-        {
-            using (Stream resource = GetType().Assembly
-                                              .GetManifestResourceStream(resourceName))
-            {
-                if (resource == null)
-                {
-                    throw new ArgumentException("No such resource", "resourceName");
-                }
-                using (Stream output = File.OpenWrite(file))
-                {
-                    resource.CopyTo(output);
-                }
-            }
-        }
 #if DEBUG
         private void Form1_Load(object sender, EventArgs e)
         {
