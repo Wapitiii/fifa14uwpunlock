@@ -39,7 +39,7 @@ namespace FIFA_14_UWP_Unlocker
             string destination = @"C:\Users\" + Environment.UserName + @"\AppData\Local\Packages\ElectronicArtsMobile.FIFA14_rr5nm3kas82pr\LocalState\storage.zip";
             string extractloc = @"C:\Users\" + Environment.UserName + @"\AppData\Local\Packages\ElectronicArtsMobile.FIFA14_rr5nm3kas82pr\LocalState\_storage";
             string ziploc = @"C:\Users\" + Environment.UserName + @"\AppData\Local\Packages\ElectronicArtsMobile.FIFA14_rr5nm3kas82pr\LocalState\storage.zip";
-            string fifa14saveloc = @"C: \Users\" + Environment.UserName + @"\AppData\Local\Packages\ElectronicArtsMobile.FIFA14_rr5nm3kas82pr\";
+            string fifa14saveloc = @"C:\Users\" + Environment.UserName + @"\AppData\Local\Packages\ElectronicArtsMobile.FIFA14_ypha960rexkh8";
             if (!Directory.Exists(fifa14saveloc))
             {
                 string errormessage = "Whoops, it seems like you don't have FIFA 14 installed!";
