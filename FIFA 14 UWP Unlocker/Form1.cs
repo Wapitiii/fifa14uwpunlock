@@ -36,9 +36,9 @@ namespace FIFA_14_UWP_Unlocker
         private void button1_Click(object sender, EventArgs e)
         {
             string appxid = "ypha960rexkh8"; // idk what this id is, maybe it isn't even an id lol
-            string source = @"Resources\storage.zip";
             string destination = @"C:\Users\" + Environment.UserName + @"\AppData\Local\Packages\ElectronicArtsMobile.FIFA14_" + appxid + @"\LocalState\storage.zip";
-            string extractloc = @"C:\Users\" + Environment.UserName + @"\AppData\Local\Packages\ElectronicArtsMobile.FIFA14_" + appxid + @"\LocalState\_storage";
+            string extractloc = @"C:\Users\" + Environment.UserName + @"\AppData\Local\Packages\ElectronicArtsMobile.FIFA14_" + appxid + @"\LocalState\";
+            string storagedir = @"C:\Users\" + Environment.UserName + @"\AppData\Local\Packages\ElectronicArtsMobile.FIFA14_" + appxid + @"\LocalState\_storage";
             string ziploc = @"C:\Users\" + Environment.UserName + @"\AppData\Local\Packages\ElectronicArtsMobile.FIFA14_" + appxid + @"\LocalState\storage.zip";
             string fifa14saveloc = @"C:\Users\" + Environment.UserName + @"\AppData\Local\Packages\ElectronicArtsMobile.FIFA14_" + appxid;
             if (!Directory.Exists(fifa14saveloc))
@@ -52,7 +52,7 @@ namespace FIFA_14_UWP_Unlocker
             {
                 File.Delete(ziploc);
             }
-            System.IO.DirectoryInfo di = new DirectoryInfo(extractloc);
+            System.IO.DirectoryInfo di = new DirectoryInfo(storagedir);
 
             foreach (FileInfo file in di.GetFiles())
             {
@@ -62,12 +62,27 @@ namespace FIFA_14_UWP_Unlocker
             {
                 dir.Delete(true);
             }
-            File.Copy(source, destination);
+            System.IO.File.WriteAllBytes(destination, Properties.Resources.storage);
             ZipFile.ExtractToDirectory(ziploc, extractloc);
             File.Delete(ziploc);
             string message = "Patched successfully!";
             string title = ":)";
             MessageBox.Show(message, title);
+        }
+        private void CopyResource(string resourceName, string file)
+        {
+            using (Stream resource = GetType().Assembly
+                                              .GetManifestResourceStream(resourceName))
+            {
+                if (resource == null)
+                {
+                    throw new ArgumentException("No such resource", "resourceName");
+                }
+                using (Stream output = File.OpenWrite(file))
+                {
+                    resource.CopyTo(output);
+                }
+            }
         }
 #if DEBUG
         private void Form1_Load(object sender, EventArgs e)
